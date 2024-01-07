@@ -105,7 +105,7 @@ const Header = () => {
           block: "start",
         });
         toggleLoader(false);
-      }, 1200)
+      }, 2400)
     }
   };
 
@@ -114,7 +114,7 @@ const Header = () => {
       setTimeout(() => {
         toogleDarkmode();
         toggleLoader(false);
-      }, 1200)
+      }, 2400)
   }
 
   const { isMobile, linkStyle, toogleDarkmode, darkmode } = useFontContext();

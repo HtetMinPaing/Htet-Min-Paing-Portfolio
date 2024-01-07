@@ -1,4 +1,4 @@
-import { Box, Card, CardHeader, Flex, HStack, Image, Link, Text } from '@chakra-ui/react'
+import { Box, Card, CardHeader, Flex, HStack, Image, Link, Text, Heading } from '@chakra-ui/react'
 import React from 'react'
 import { faMeta } from '@fortawesome/free-brands-svg-icons'
 import Coursera from "../images/Coursera.png"
@@ -39,6 +39,12 @@ const Certificate = () => {
       minHeight="auto"
       color={darkmode ? "rgb(241, 245, 241)" : "#4d5061"}
     >
+      <Heading as="h1" mx="auto">
+        Qualification
+      </Heading>
+      <Heading size="md" mx="auto">
+        Coursera Certificates Credential By Meta Platform
+      </Heading>
       <Flex display="flex"  flexWrap="wrap" gap={8} justifyContent="center" >
         {
           certificates.map((certificate, index) => {

@@ -37,7 +37,7 @@ const Loader = () => {
                 color='#439775'
             /> */}
             <dotlottie-player 
-                src={six} 
+                src={three} 
                 background="transparent" 
                 speed="1" 
                 style={{ width: "30rem", height: "30rem", position: "absolute" }} 

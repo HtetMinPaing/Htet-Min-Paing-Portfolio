@@ -32,6 +32,9 @@
 .containerScroll:nth-child(4){
     animation-delay: 2s;
 }
+.containerScroll:nth-child(5){
+    animation-delay: 2.5s;
+}
 
 .text_box {
     padding: 20px 30px;

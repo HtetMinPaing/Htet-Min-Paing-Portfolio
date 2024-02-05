@@ -27,8 +27,8 @@ const Timeline = () => {
 const data = [
     {
         college: "University of People",
-        year: "2021 - Present",
-        description: "Associate Degree in Computer Science",
+        year: "2024 - present",
+        description: "Bachelor Degree in Computer Science",
         isRight: false,
         getImageSrc: () => require("../images/Uopeople.png"),
     },
@@ -39,19 +39,25 @@ const data = [
         isRight: true,
         getImageSrc: () => require("../images/Auston.png"),
     },
-
+    {
+        college: "University of People",
+        year: "2021 - 2023",
+        description: "Associate Degree in Computer Science",
+        isRight: false,
+        getImageSrc: () => require("../images/Uopeople.png"),
+    },
     {
         college: "ITPEC (IP)",
         year: "2023",
         description: "Information Technology Passport Examination Certificate",
-        isRight: false,
+        isRight: true,
         getImageSrc: () => require("../images/Itpec.png"),
     },
     {
         college: "JLPT (N2)",
         year: "2023",
         description: "Japanese Language Proficiency Text (N2 Level)",
-        isRight: true,
+        isRight: false,
         getImageSrc: () => require("../images/Jlpt.png"),
     },
 ]

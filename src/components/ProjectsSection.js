@@ -22,6 +22,22 @@ const projects = [
     url: "https://tt-dessertshop.pages.dev/"
   },
   {
+    title: "Restaurant Web",
+    description:
+      "Web page for the restaurant home page, having the booking system and menu displaying functionality",
+    getImageSrc: () => require("../images/project5.png"),
+    languages: ["ReactJS","SCSS","JavaScript","Front-End-Development"],
+    url: "https://htetminpaing-little-lemon.pages.dev/"
+  },
+  {
+    title: "React-ToDo App",
+    description:
+      "ReactJS project that has the functionality of adding, deleting, editing the daily task by dealing with local storage",
+    getImageSrc: () => require("../images/project4.png"),
+    languages: ["ReactJS","ReduxJS","SCSS","Framer Motion"],
+    url: "https://tt-todo-react.onrender.com/"
+  },
+  {
     title: "Java Quiz",
     description:
       "A Java GUI Project for a quiz application by using java built-in package javax [Contact me for source code]",

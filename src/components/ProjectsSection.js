@@ -58,16 +58,14 @@ const tutorials = [
     description:
       "Java coding and mini lab projects for self traininng and learning purpose. Copyright belongs to owners.",
     languages: ["Java","Object-Orient-Programming"],
-    url: "mailto: hmphtetminpaing@gmail.com",
-    repo: "https://github.com/HtetMinPaing/Java-Project.git"
+    repo: "https://github.com/HtetMinPaing/FEJavaClass.git"
   },
   {
     title: "React Tutorials",
     description:
       "React coding and mini lab projects for self traininng and learning purpose. Copyright belongs to owners",
     languages: ["JavaScript","ReactJS","Front-End"],
-    url: "mailto: hmphtetminpaing@gmail.com",
-    repo: "https://github.com/HtetMinPaing/Java-Project.git"
+    repo: "https://github.com/HtetMinPaing/React-Lab.git"
   },
 ]
 
@@ -108,7 +106,7 @@ const ProjectsSection = () => {
             repo={project.repo}
           />
         ))}
-        <VStack justifyContent={"space-around"}>
+        <VStack justifyContent={"space-between"}>
           {tutorials.map((tutorial) => (
             <TutorialCard tutorial={tutorial} />
           ))}

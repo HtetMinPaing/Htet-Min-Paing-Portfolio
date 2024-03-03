@@ -62,7 +62,7 @@ export const TutorialCard = ({ tutorial }) => {
       <VStack position="relative">
         <VStack alignItems="flex-start" px="1rem" color={"rgb(241, 245, 241)"}>
 
-          <HStack>
+          <HStack padding={1}>
             <Heading>{tutorial.title}</Heading>
             <Link position="absolute" right={5} top={1} href={tutorial.repo} isExternal={true}>
               <Button fontSize="1.2rem" {...bottomStyle} padding={1} gap={1}>

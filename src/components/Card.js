@@ -4,6 +4,7 @@ import { faArrowRight, faArrowUpRightFromSquare } from "@fortawesome/free-solid-
 import { faGit, faGithub } from '@fortawesome/free-brands-svg-icons'
 import React from "react";
 import { useFontContext } from "../context/fontContext";
+import { motion } from "framer-motion";
 
 const Card = ({ title, description, languages, imageSrc, url, repo }) => {
 
@@ -37,9 +38,9 @@ const Card = ({ title, description, languages, imageSrc, url, repo }) => {
           </Text>
 
           {/* <Text fontSize="1.2rem">
-            {description.length > 90 ? description.slice(0, 90) + " ... " : description}
-            <Link color={"#439775"} _hover={{color: "#48bf84"}} fontWeight="semibold">See More</Link>
-          </Text> */}
+      {description.length > 90 ? description.slice(0, 90) + " ... " : description}
+      <Link color={"#439775"} _hover={{color: "#48bf84"}} fontWeight="semibold">See More</Link>
+    </Text> */}
 
           <Box display="flex" flexWrap="wrap" color={"#439775"} fontWeight="semibold" justifyContent="flex-start" columnGap={5} my="auto" pb="1rem" fontSize="lg">
             {

@@ -16,14 +16,15 @@ import useScroll from "./hooks/useScroll";
 import { LoaderProvider } from "./context/loaderContext";
 import Loader from "./components/Loader";
 import Certificate from "./components/Certificate";
+import EducationTimeline from "./components/EducationTimeline";
 
 function App() {
 
   useAnimation(".hide","show")
-  useScroll(".container","containerScroll")
-  useScroll(".timeline","timelineScroll")
-  useAnimation(".rightBox","moveleft")
-  useAnimation(".leftBox","moveright")
+  // useScroll(".container","containerScroll")
+  // useScroll(".timeline","timelineScroll")
+  // useAnimation(".rightBox","moveleft")
+  // useAnimation(".leftBox","moveright")
   useAnimation(".moveDown","movedown")
 
   return (
@@ -33,11 +34,11 @@ function App() {
           <LoaderProvider>
           <main>
             <Header />
-            <div className="hide"><LandingSection /></div>
-            <div className="scroll"><Timeline /></div>
+            <div className=""><LandingSection /></div>
+            <div className=""><EducationTimeline /></div>
             <div className=""><Experience /></div>
             <div className="hide"><ProjectsSection /></div>
-            <Certificate />
+            <div className=""><Certificate /></div>
             <div className="hide"><ContactMeSection /></div>
             <Alert />
             <Footer />

@@ -21,6 +21,7 @@ import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
 import { useFontContext } from "../context/fontContext";
 import '@dotlottie/player-component';
+import { color } from "framer-motion";
 
 const LandingSection = () => {
   const { isLoading, response, submit } = useSubmit();
@@ -59,8 +60,10 @@ const LandingSection = () => {
 
   return (
     <FullScreenSection
-      isDarkBackground
-      backgroundColor={darkmode ? "#1d1d16" : "#4d5061"}
+      containerStyle={{ 
+        backgroundColor: darkmode ? "#1d1d16" : "#4d5061",
+        color: "white"
+      }}
       py={16}
       spacing={8}
       id="contact-section"
@@ -73,7 +76,7 @@ const LandingSection = () => {
             Contact me
           </Heading>
           <dotlottie-player src="https://lottie.host/aee2251f-8e74-4431-8def-fca6b503ee50/tQMFCHcdHU.json" background="transparent" speed="1" style={{ width: "300px", height: "300px" }} loop autoplay></dotlottie-player>
-          <VStack alignItems="center" justifyContent="space-between"  w={screenSize}>
+          <VStack alignItems="center" justifyContent="space-between" w={screenSize}>
             <Text>
               <HStack>
                 <Text color="red.400">Note :</Text><Text>Because of the technical issues, </Text>

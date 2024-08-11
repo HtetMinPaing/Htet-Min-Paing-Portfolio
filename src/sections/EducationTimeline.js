@@ -3,58 +3,18 @@ import React from 'react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 
 import "react-vertical-timeline-component/style.min.css"
-import FullScreenSection from './FullScreenSection'
+import FullScreenSection from '../components/FullScreenSection'
 import "../CSS/EducationTimeline.css"
 import Reveal from '../animations/Reveal'
+import { educationData } from "../utils/data"
 
 
-const data = [
-    {
-        id: 1,
-        college: "University of People",
-        year: "2024 - present",
-        degree: "Bachelor Degree in Computer Science",
-        isDegree: true,
-        imageSrc: "Uopeople.png"
-    },
-    {
-        id: 2,
-        college: "Auston University",
-        year: "2023 - Present",
-        degree: "Higher Diploma in Infrastructure and Nework",
-        isDegree: true,
-        imageSrc: "Auston.png"
-    },
-    {
-        id: 3,
-        college: "University of People",
-        year: "2021 - 2023",
-        degree: "Associate Degree in Computer Science",
-        isDegree: true,
-        imageSrc: "Uopeople.png"
-    },
-    {
-        id: 4,
-        college: "ITPEC (IP)",
-        year: "2023",
-        degree: "Information Technology Passport Examination Certificate",
-        isDegree: false,
-        imageSrc: "Itpec.png"
-    },
-    {
-        id: 5,
-        college: "JLPT (N2)",
-        year: "2023",
-        degree: "Japanese Language Proficiency Text (N2 Level)",
-        isRight: false,
-        imageSrc: "Jlpt.png"
-    },
-]
+const data = educationData
 
 const EducationTimeline = () => {
 
     return (
-        <FullScreenSection>
+        <FullScreenSection minHeight="auto">
             <Heading py={6}>
                 <Reveal cover={false} direction="bottom">
                     Education Background

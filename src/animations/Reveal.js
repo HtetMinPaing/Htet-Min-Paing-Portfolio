@@ -21,6 +21,17 @@ const directions = {
     }
 }
 
+const coverDirection = {
+  original: {
+    hidden: { left: 0 },
+    visible: { left: "100%" },
+  },
+  reverse: {
+    hidden: { right: 0 },
+    visible: { right: "100%" },
+  }
+}
+
 const getDirection = (direction) => {
     let direct;
     switch(direction) {
@@ -42,7 +53,7 @@ const getDirection = (direction) => {
     return direct;
 }
 
-const Reveal = ({ children, direction = "top", cover = true }) => {
+const Reveal = ({ children, direction = "top", cover = true, reverseCover = false }) => {
 
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -72,10 +83,7 @@ const Reveal = ({ children, direction = "top", cover = true }) => {
       </motion.div>
       { cover && 
       <motion.div 
-        variants={{
-          hidden: { left: 0 },
-          visible: { left: "100%" },
-        }}
+        variants={reverseCover ? coverDirection.reverse : coverDirection.original}
         initial="hidden"
         animate={slideControl}
         transition={{ duration: 0.5, ease: "easeIn"}}
@@ -85,7 +93,7 @@ const Reveal = ({ children, direction = "top", cover = true }) => {
           bottom: 0,
           left: 0,
           right: 0,
-          background: "#439775",
+          background: "#48bf84",
           zIndex: 20,
         }} 
       />}

@@ -16,7 +16,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import * as Yup from 'yup';
-import FullScreenSection from "./FullScreenSection";
+import FullScreenSection from "../components/FullScreenSection";
 import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
 import { useFontContext } from "../context/fontContext";

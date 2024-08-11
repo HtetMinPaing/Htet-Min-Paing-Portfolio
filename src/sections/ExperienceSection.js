@@ -1,7 +1,7 @@
 import React from 'react'
 import { HStack, VStack, Text, Box, Heading, Flex, Grid, space, Button } from '@chakra-ui/react'
 import { faReact, faJava, faPython, faHtml5, faCss3, faBootstrap, faFigma, faGithub, faNodeJs } from '@fortawesome/free-brands-svg-icons'
-import FullScreenSection from './FullScreenSection'
+import FullScreenSection from '../components/FullScreenSection'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useFontContext } from '../context/fontContext'
 import Reveal from '../animations/Reveal'
@@ -27,7 +27,7 @@ const texts = [
     ">> Personal Blog"
 ]
 
-const Experience = () => {
+const ExperienceSection = () => {
 
     const {isLargeScreen, darkmode} = useFontContext();
 
@@ -90,4 +90,4 @@ const Experience = () => {
     )
 }
 
-export default Experience
+export default ExperienceSection

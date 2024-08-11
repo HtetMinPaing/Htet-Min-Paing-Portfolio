@@ -1,44 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faEnvelope, faGears, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
-import {
-  faDropbox,
-  faGithub,
-  faLinkedin,
-  faMedium,
-  faStackOverflow,
-  faFacebook,
-  faFacebookMessenger,
-} from "@fortawesome/free-brands-svg-icons";
 import { Text, Link, Box, HStack, Menu, MenuButton, IconButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { useFontContext } from "../context/fontContext";
 import { color } from "framer-motion";
 import "@lottiefiles/lottie-player";
 import '@dotlottie/player-component';
 import { useLoaderContext } from "../context/loaderContext";
+import {socialsData} from  "../utils/data"
+import { faBars, faMoon, faSun, faAdjust } from "@fortawesome/free-solid-svg-icons";
 
-const socials = [
-  {
-    icon: faEnvelope,
-    url: "mailto: ttee62525@gmail.com",
-  },
-  {
-    icon: faGithub,
-    url: "https://github.com/HtetMinPaing",
-  },
-  {
-    icon: faLinkedin,
-    url: "https://www.linkedin.com/in/htetminpaing/",
-  },
-  {
-    icon: faMedium,
-    url: "https://medium.com/@hmphtetminpaing",
-  },
-  {
-    icon: faFacebook,
-    url: "https://www.facebook.com/htetminpaing.htetminpaing.3?mibextid=LQQJ4d",
-  },
-];
+
+const socials = socialsData
 
 const NormalMenu = () => {
 
@@ -144,7 +116,7 @@ const Header = () => {
             <HStack spacing={6}>
               <Link fontSize="1.5rem" fontWeight={700} {...linkStyle} onClick={handleClick("projects")}>Projects</Link>
               <Link fontSize="1.5rem" fontWeight={700} {...linkStyle} onClick={handleClick("contact")}>Contact</Link>
-              <FontAwesomeIcon icon={darkmode ? faSun : faMoon} size="2xl" onClick={handleDarkMode} cursor="pointer" color={darkmode ? "#FDB813" : "#C2C5CC"} />
+              <FontAwesomeIcon icon={faAdjust} size="2xl" lightingColor={darkmode ? "#cc7d2f":"#16161d"} onClick={handleDarkMode} cursor="pointer" color={darkmode ? "#FDB813" : "#C2C5CC"} />
             </HStack>
           </nav>
         </HStack>

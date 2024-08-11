@@ -1,17 +1,18 @@
-import { Box, Button, Heading, HStack, Image, Link, Text, VStack } from "@chakra-ui/react";
+import { Badge, Box, Button, Heading, HStack, Image, Link, Text, VStack } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { faGit, faGithub } from '@fortawesome/free-brands-svg-icons'
 import React from "react";
 import { useFontContext } from "../context/fontContext";
 import { motion } from "framer-motion";
+import Reveal from "../animations/Reveal";
 
 const Card = ({ title, description, languages, imageSrc, url, repo }) => {
 
   const { bottomStyle, linkStyle } = useFontContext();
 
   return (
-    <Box className="moveDown" backgroundColor="#4d5061" borderRadius="2rem" height={"auto"} shadow="2xl">
+    <Box className="" backgroundColor="#4d5061" borderRadius="2rem" height={"auto"} shadow="2xl">
 
       <VStack position="relative">
 
@@ -30,11 +31,11 @@ const Card = ({ title, description, languages, imageSrc, url, repo }) => {
         <VStack alignItems="flex-start" px="1rem" color={"rgb(241, 245, 241)"}>
 
           <HStack>
-            <Heading>{title}</Heading>
+            <Heading><Reveal reverseCover={true} direction="left">{title}</Reveal></Heading>
           </HStack>
 
           <Text fontSize="1.2rem">
-            {description}
+            <Reveal reverseCover={true} direction="left">{description}</Reveal>
           </Text>
 
           {/* <Text fontSize="1.2rem">
@@ -42,13 +43,15 @@ const Card = ({ title, description, languages, imageSrc, url, repo }) => {
       <Link color={"#439775"} _hover={{color: "#48bf84"}} fontWeight="semibold">See More</Link>
     </Text> */}
 
-          <Box display="flex" flexWrap="wrap" color={"#439775"} fontWeight="semibold" justifyContent="flex-start" columnGap={5} my="auto" pb="1rem" fontSize="lg">
-            {
-              languages.map((language) => (
-                <Text>{language}</Text>
-              ))
-            }
-          </Box>
+          <Reveal cover={false}>
+            <Box display="flex" flexWrap="wrap" color={"#439775"} fontWeight="semibold" justifyContent="flex-start" columnGap={5} rowGap={3} my="auto" pb="1rem" fontSize="lg">
+              {
+                languages.map((language) => (
+                  <Badge bgColor="#48bf84">{language}</Badge>
+                ))
+              }
+            </Box>
+          </Reveal>
         </VStack>
       </VStack>
     </Box>
@@ -58,13 +61,15 @@ const Card = ({ title, description, languages, imageSrc, url, repo }) => {
 export const TutorialCard = ({ tutorial }) => {
   const { bottomStyle } = useFontContext();
   return (
-    <Box className="moveDown" backgroundColor="#4d5061" borderRadius="2rem" height={"auto"} shadow="2xl">
+    <Box className="" backgroundColor="#4d5061" borderRadius="2rem" height={"auto"} shadow="2xl">
 
       <VStack position="relative">
         <VStack alignItems="flex-start" px="1rem" color={"rgb(241, 245, 241)"}>
 
           <HStack padding={1}>
-            <Heading>{tutorial.title}</Heading>
+            <Heading>
+              <Reveal reverseCover={true} direction="left">{tutorial.title}</Reveal>
+            </Heading>
             <Link position="absolute" right={5} top={1} href={tutorial.repo} isExternal={true}>
               <Button fontSize="1.2rem" {...bottomStyle} padding={1} gap={1}>
                 <FontAwesomeIcon icon={faGit} size="1x" />
@@ -74,16 +79,20 @@ export const TutorialCard = ({ tutorial }) => {
           </HStack>
 
           <Text fontSize="1.2rem">
-            {tutorial.description}
+            <Reveal reverseCover={true} direction="left">
+              {tutorial.description}
+            </Reveal>
           </Text>
 
-          <Box display="flex" flexWrap="wrap" color={"#439775"} fontWeight="semibold" justifyContent="flex-start" columnGap={5} my="auto" pb="1rem" fontSize="lg">
-            {
-              tutorial.languages.map((language) => (
-                <Text>{language}</Text>
-              ))
-            }
-          </Box>
+          <Reveal cover={false}>
+            <Box display="flex" flexWrap="wrap" color={"#439775"} fontWeight="semibold" justifyContent="flex-start" columnGap={5} rowGap={3} my="auto" pb="1rem" fontSize="lg">
+              {
+                tutorial.languages.map((language) => (
+                  <Badge bgColor="#48bf84">{language}</Badge>
+                ))
+              }
+            </Box>
+          </Reveal>
         </VStack>
       </VStack>
     </Box>

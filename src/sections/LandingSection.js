@@ -1,6 +1,6 @@
 import React from "react";
-import { Avatar, Box, Flex, Heading, Text, VStack, Link, Button, HStack } from "@chakra-ui/react";
-import FullScreenSection from "./FullScreenSection";
+import { Box, Flex, Heading, Text, VStack, Button, HStack } from "@chakra-ui/react";
+import FullScreenSection from "../components/FullScreenSection";
 import me from "../images/me.jpg"
 import { useFontContext } from "../context/fontContext";
 import resume from "../images/Htet_Min_Paing_Resume.pdf";

@@ -137,18 +137,24 @@ export const certificateData = [
       title: "Meta Front End Developer Professional Certificate",
       orgs: ["Coursera", "Meta"],
       description: "Certificate issued by Meta (Facebook) on Courera online platform specified in Front-End Engineering consist of Javascript popular framework (React).",
-      url: "https://coursera.org/share/b79ba831134bbef23c36768ca071b9d4",
+      url: "https://coursera.org/share/767c02d94d02c3621833a967e00f04c9",
+    },
+    // {
+    //   title: "Meta React Basic and Advanced React Developer Certificate",
+    //   orgs: ["Coursera", "Meta"],
+    //   description: "Certificate issued by Meta (Facebook) on Courera online platform specified in React and its advanced features such as hooks, router and context",
+    //   url: "https://coursera.org/share/d7b1009ecdb3db7421f52ad7b197af74",
+    // },
+    {
+      title: "(PHP Master Class) - The Complete PHP Developer Course",
+      orgs: ["Udemy"],
+      description: "Certificate issued by Meta (Facebook) on Courera online platform specified in Front-End Engineering consist of Javascript popular framework (React).",
+      url: "https://udemy-certificate.s3.amazonaws.com/image/UC-3325fad6-41a3-4a5e-92b1-c5d60c09ecaa.jpg?v=1723972988000",
     },
     {
-      title: "Meta React Basic and Advanced React Developer Certificate",
-      orgs: ["Coursera", "Meta"],
-      description: "Certificate issued by Meta (Facebook) on Courera online platform specified in React and its advanced features such as hooks, router and context.",
-      url: "https://coursera.org/share/d7b1009ecdb3db7421f52ad7b197af74",
-    },
-    {
-      title: "Meta Front End Developer Capstone Project Certificate",
-      orgs: ["Coursera", "Meta"],
-      description: "Certificate issued by Meta (Facebook) on Courera online platform specified in UX and UI designing including Figma designing and wiring process",
-      url: "",
+      title: "Kaggle Introduction to programming with (Python)",
+      orgs: ["Kaggle"],
+      description: "Certificate issued by Kaggle specified in python to forward advanced learning for machine learning, Pandas, and reinforcement learning ",
+      url: "https://www.kaggle.com/learn/certification/htetminpaing/python",
     }
 ];

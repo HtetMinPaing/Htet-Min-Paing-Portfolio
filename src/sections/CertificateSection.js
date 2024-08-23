@@ -21,10 +21,10 @@ const CertificateSection = () => {
       color={darkmode ? "rgb(241, 245, 241)" : "#4d5061"}
     >
       <Heading as="h1" mx="auto" my={2}>
-        <Reveal cover={false} direction='bottom'>Qualification</Reveal>
+        <Reveal cover={false} direction='bottom'>Certificates</Reveal>
       </Heading>
       <Heading size="md" mx="auto" my={2}>
-        <Reveal cover={false}>Coursera Certificates Credential By Meta Platform</Reveal>
+        <Reveal cover={false}>Online certificate from popular bootcamp; Coursera, Kaggle, Udemy </Reveal>
       </Heading>
       <Flex display="flex"  flexWrap="wrap" gap={16} justifyContent="center" >
         {

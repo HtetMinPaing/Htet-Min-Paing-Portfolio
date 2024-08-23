@@ -1,3 +1,8 @@
+# About this repo
+
+This is the repo of my portfolio website. The deployment details are as follow. You can see the demon version at https://htetminpaing.pages.dev/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -71,14 +76,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### npm install gh-pages --save-dev
 ### npm run deploy
-### "homepage": "https://HtetMinPaing.github.io/secondapp",
+### "homepage": "https://HtetMinPaing.github.io/Htet-Min-Paing-Portfolio",
 ###     "predeploy": "npm run build",
 ###   "deploy": "gh-pages -d build",
 
 
-# extra
+## Dependency
+```
 npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
 npm install formik --save
 npm i --save @fortawesome/fontawesome-svg-core
 npm install --save @dotlottie/player-component
 npm install --save @lottiefiles/lottie-player
+```

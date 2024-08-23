@@ -106,14 +106,14 @@ const Header = () => {
     >
       <Box color="white" maxWidth="1280px" margin="0 auto">
         <HStack
-          px={10}
+          px={isMobile?3:10}
           py={5}
           justifyContent="space-between"
           alignItems="center"
         >
           {isMobile ? <DropMenu /> : <NormalMenu />}
           <nav>
-            <HStack spacing={6}>
+            <HStack spacing={isMobile?3:6}>
               <Link fontSize="1.5rem" fontWeight={700} {...linkStyle} onClick={handleClick("projects")}>Projects</Link>
               <Link fontSize="1.5rem" fontWeight={700} {...linkStyle} onClick={handleClick("contact")}>Contact</Link>
               <FontAwesomeIcon icon={faAdjust} size="2xl" lightingColor={darkmode ? "#cc7d2f":"#16161d"} onClick={handleDarkMode} cursor="pointer" color={darkmode ? "#FDB813" : "#C2C5CC"} />

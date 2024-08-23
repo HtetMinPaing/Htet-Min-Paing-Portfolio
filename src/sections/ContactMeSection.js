@@ -83,10 +83,10 @@ const LandingSection = () => {
               </HStack>
             </Text>
             <Text>
-              Please kindly contact through direct email
+              There will be a case that email can't reach
             </Text>
             <Text>
-              rather than through this contact section
+              Contact via direct email is the best option
             </Text>
           </VStack>
         </VStack>

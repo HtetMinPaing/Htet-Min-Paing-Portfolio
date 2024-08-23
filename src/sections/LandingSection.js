@@ -14,7 +14,7 @@ const bio2 = "Specialised in React, Java, Python, JavaScript";
 // Implement the UI for the LandingSection component according to the instructions.
 // Use a combination of Avatar, Heading and VStack components.
 const LandingSection = () => {
-  const { bottomStyle, darkmode } = useFontContext();
+  const { bottomStyle, darkmode, isLargeScreen, isMobile } = useFontContext();
   return (
     <FullScreenSection
       justifyContent="center"
@@ -22,7 +22,7 @@ const LandingSection = () => {
       // isDarkBackground={true}
       // backgroundColor={darkmode ? "#1d1d16" : "rgb(241, 245, 241)"}
     >
-      <Flex pt="6rem" gap="5rem" flexWrap="wrap" justifyContent="center" alignItems="center">
+      <Flex pt="6rem" gap={isMobile?"2.5rem":"5rem"} flexWrap="wrap" justifyContent="center" alignItems="center"  flexDirection={isLargeScreen?"":"column-reverse"}>
         <VStack alignItems="flex-start" p={4} color={darkmode ? "rgb(241, 245, 241)" : "#4d5061"}>
           <Heading>
             <Reveal direction="bottom">{greeting}</Reveal>

@@ -36,7 +36,7 @@ const LandingSection = () => {
       comment: ""
     },
     onSubmit: (values) => {
-      submit("http://localhost:3000/contact", values)
+      submit(values)
     },
     validationSchema: Yup.object().shape({
       firstName: Yup.string().required('First name is required'),

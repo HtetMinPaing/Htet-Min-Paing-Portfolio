@@ -1,4 +1,5 @@
 import {useState} from "react";
+import emailjs from '@emailjs/browser';
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -10,19 +11,30 @@ const useSubmit = () => {
   const [isLoading, setLoading] = useState(false);
   const [response, setResponse] = useState(null);
 
-  const submit = async (url, data) => {
-    const random = Math.random();
-    setLoading(true);
-    try {
-      await wait(2000);
-      if (random < 0.5) {
-        throw new Error("Something went wrong");
-      }
-      setResponse({
-        type: 'success',
-        message: `Thanks for your submission ${data.firstName}. This contact is for testing only. Please contact through direct email. Thank you`,
+  const submit = async (data) => {
+    try{
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        data,
+        {publicKey: process.env.REACT_APP_EMAILJS_USER_ID}
+      )
+      .then(() => {
+        console.log('SUCCESS!');
+        setResponse({
+          type: 'success',
+          message: `Thanks for your submission ${data.firstName}`,
+        })
       })
-    } catch (error) {
+      .catch((error) => {
+        console.error('EmailJS error:', error);
+        setResponse({
+          type: 'error',
+          message: 'Something went wrong, please try again later!',
+        })
+      })
+    } catch(error) {
+      console.error('EmailJS error:', error);
       setResponse({
         type: 'error',
         message: 'Something went wrong, please try again later!',

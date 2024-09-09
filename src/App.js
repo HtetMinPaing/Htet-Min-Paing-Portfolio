@@ -17,33 +17,37 @@ import Loader from "./components/Loader";
 import CertificateSection from "./sections/CertificateSection";
 import EducationTimeline from "./sections/EducationTimeline";
 import CertificateCard from "./components/CertificateCard";
+import { LanguageProvider } from "./context/languageContext";
+import Language from "./components/Language";
 
 function App() {
 
-  useAnimation(".hide","show")
+  useAnimation(".hide", "show")
   // useScroll(".container","containerScroll")
   // useScroll(".timeline","timelineScroll")
   // useAnimation(".rightBox","moveleft")
   // useAnimation(".leftBox","moveright")
-  useAnimation(".moveDown","movedown")
+  useAnimation(".moveDown", "movedown")
 
   return (
     <ChakraProvider>
       <FontProvider>
         <AlertProvider>
           <LoaderProvider>
-          <main>
-            <Header />
-            <div className=""><LandingSection /></div>
-            <div className=""><EducationTimeline /></div>
-            <div className=""><ExperienceSection /></div>
-            <div className=""><ProjectsSection /></div>
-            <div className=""><CertificateSection /></div>
-            <div className="hide"><ContactMeSection /></div>
-            <Alert />
-            <Footer />
-            <Loader />
-          </main>
+            <LanguageProvider>
+              <main>
+                <Header />
+                <div className=""><LandingSection /></div>
+                <div className=""><EducationTimeline /></div>
+                <div className=""><ExperienceSection /></div>
+                <div className=""><ProjectsSection /></div>
+                <div className=""><CertificateSection /></div>
+                <div className="hide"><ContactMeSection /></div>
+                <Alert />
+                <Footer />
+                <Loader />
+              </main>
+            </LanguageProvider>
           </LoaderProvider>
         </AlertProvider>
       </FontProvider>

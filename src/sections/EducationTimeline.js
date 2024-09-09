@@ -7,17 +7,20 @@ import FullScreenSection from '../components/FullScreenSection'
 import "../CSS/EducationTimeline.css"
 import Reveal from '../animations/Reveal'
 import { educationData } from "../utils/data"
-
-
-const data = educationData
+import { educationData as educationDataJP } from "../utils/japanData"
+import { useLanguageContext } from '../context/languageContext'
 
 const EducationTimeline = () => {
+
+    const { isEnglish } = useLanguageContext();
+
+    const data = isEnglish? educationData: educationDataJP;
 
     return (
         <FullScreenSection minHeight="auto">
             <Heading py={6}>
                 <Reveal cover={false} direction="bottom">
-                    Education Background
+                    {isEnglish? "Education Background": "学歴"}
                 </Reveal>
             </Heading>
             <VerticalTimeline lineColor='#4d5061'>

@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Flex, Heading} from "@chakra-ui/react";
+import {Box, Flex} from "@chakra-ui/react";
 import { useFontContext } from "../context/fontContext";
 
 const Footer = () => {
@@ -17,7 +17,7 @@ const Footer = () => {
           height={16}
           gap={4}
         >
-          <p>Paing • © 2023</p>
+          <p>Paing • © 2023 - 2024</p>
           <p>All right preserved to the owners</p>
         </Flex>
       </footer>

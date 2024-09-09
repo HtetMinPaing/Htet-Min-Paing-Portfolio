@@ -4,12 +4,15 @@ import { Box, HStack, Heading, Text, VStack } from "@chakra-ui/react";
 import Card, { TutorialCard } from "../components/Card";
 import { useFontContext } from "../context/fontContext";
 import { projectData, tutorialData } from "../utils/data";
-
-const projects = projectData
-const tutorials = tutorialData
+import { projectData as projectDataJP, tutorialData as tutorialDataJP } from "../utils/japanData";
+import { useLanguageContext } from "../context/languageContext";
 
 const ProjectsSection = () => {
   const { designBox, darkmode } = useFontContext();
+  const { isEnglish } = useLanguageContext();
+
+  const projects = isEnglish? projectData: projectDataJP;
+  const tutorials = isEnglish? tutorialData: tutorialDataJP;
 
   return (
     <FullScreenSection
@@ -24,10 +27,12 @@ const ProjectsSection = () => {
       color={darkmode ? "rgb(241, 245, 241)" : "#4d5061"}
     >
       <Heading as="h1" mx="auto">
-        Completed Projects
+        {isEnglish? "Completed Projects": "完了したプロジェクト"}
       </Heading>
       <Heading size="md" mx="auto">
-        Loading can take some time to preview each Demo application
+        {isEnglish? 
+        "Loading can take some time to preview each Demo application":
+        "デモアプリケーションを見るには、時間がかかる場合があります"}
       </Heading>
       <Box
         display="grid"

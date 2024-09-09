@@ -8,6 +8,8 @@ import '@dotlottie/player-component';
 import { useLoaderContext } from "../context/loaderContext";
 import {socialsData} from  "../utils/data"
 import { faBars, faMoon, faSun, faAdjust } from "@fortawesome/free-solid-svg-icons";
+import Language from "../components/Language";
+import { useLanguageContext } from "../context/languageContext";
 
 
 const socials = socialsData
@@ -66,6 +68,8 @@ const Header = () => {
 
   const { loader, toggleLoader } = useLoaderContext();
 
+  const { isEnglish } = useLanguageContext();
+
   const handleClick = (anchor) => () => {
     const id = `${anchor}-section`;
     const element = document.getElementById(id);
@@ -77,7 +81,7 @@ const Header = () => {
           block: "start",
         });
         toggleLoader(false);
-      }, 2400)
+      }, 1500)
     }
   };
 
@@ -86,7 +90,7 @@ const Header = () => {
       setTimeout(() => {
         toogleDarkmode();
         toggleLoader(false);
-      }, 2400)
+      }, 1500)
   }
 
   const { isMobile, linkStyle, toogleDarkmode, darkmode } = useFontContext();
@@ -114,8 +118,15 @@ const Header = () => {
           {isMobile ? <DropMenu /> : <NormalMenu />}
           <nav>
             <HStack spacing={isMobile?3:6}>
-              <Link fontSize="1.5rem" fontWeight={700} {...linkStyle} onClick={handleClick("projects")}>Projects</Link>
-              <Link fontSize="1.5rem" fontWeight={700} {...linkStyle} onClick={handleClick("contact")}>Contact</Link>
+              {!isMobile && 
+                <Link fontSize="1.5rem" fontWeight={700} {...linkStyle} onClick={handleClick("projects")}>
+                  {isEnglish? "Projects": "プロジェクト"}
+                </Link>}
+              {!isMobile && 
+                <Link fontSize="1.5rem" fontWeight={700} {...linkStyle} onClick={handleClick("contact")}>
+                  {isEnglish? "Contact": "メール連絡"}
+                </Link>}
+              <Language />
               <FontAwesomeIcon icon={faAdjust} size="2xl" lightingColor={darkmode ? "#cc7d2f":"#16161d"} onClick={handleDarkMode} cursor="pointer" color={darkmode ? "#FDB813" : "#C2C5CC"} />
             </HStack>
           </nav>

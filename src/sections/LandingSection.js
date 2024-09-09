@@ -5,24 +5,29 @@ import me from "../images/me.jpg"
 import { useFontContext } from "../context/fontContext";
 import resume from "../images/Htet_Min_Paing_Resume.pdf";
 import Reveal from "../animations/Reveal";
-
-const greeting = "Hello, I am Htet Min Paing!";
-const bio1 = "A software developer";
-const bio2 = "Specialised in React, Java, Python, JavaScript";
+import { aboutme } from "../utils/data";
+import { aboutme as aboutmeJP } from "../utils/japanData";
+import { useLanguageContext } from "../context/languageContext";
 
 
 // Implement the UI for the LandingSection component according to the instructions.
 // Use a combination of Avatar, Heading and VStack components.
 const LandingSection = () => {
+
   const { bottomStyle, darkmode, isLargeScreen, isMobile } = useFontContext();
+  const { isEnglish } = useLanguageContext();
+
+  const greeting = isEnglish ? aboutme.greeting : aboutmeJP.greeting;
+  const bio1 = isEnglish ? aboutme.bio1: aboutmeJP.bio1;
+  const bio2 = isEnglish ? aboutme.bio2: aboutmeJP.bio2;
   return (
     <FullScreenSection
       justifyContent="center"
       alignItems="center"
-      // isDarkBackground={true}
-      // backgroundColor={darkmode ? "#1d1d16" : "rgb(241, 245, 241)"}
+    // isDarkBackground={true}
+    // backgroundColor={darkmode ? "#1d1d16" : "rgb(241, 245, 241)"}
     >
-      <Flex pt="6rem" gap={isMobile?"2.5rem":"5rem"} flexWrap="wrap" justifyContent="center" alignItems="center"  flexDirection={isLargeScreen?"":"column-reverse"}>
+      <Flex pt="6rem" gap={isMobile ? "2.5rem" : "5rem"} flexWrap="wrap" justifyContent="center" alignItems="center" flexDirection={isLargeScreen ? "" : "column-reverse"}>
         <VStack alignItems="flex-start" p={4} color={darkmode ? "rgb(241, 245, 241)" : "#4d5061"}>
           <Heading>
             <Reveal direction="bottom">{greeting}</Reveal>
@@ -36,12 +41,16 @@ const LandingSection = () => {
           <HStack>
             <Reveal cover={false}>
               <Button fontSize="1.2rem" {...bottomStyle}>
-                <a href={resume} target="_blank">Resume</a>
+                <a href={resume} target="_blank">
+                  {isEnglish? "Resume": "履歴書"}
+                </a>
               </Button>
             </Reveal>
             <Reveal cover={false}>
               <Button fontSize="1.2rem" {...bottomStyle}>
-                <a href={resume} download="Paing_Resume">Download</a>
+                <a href={resume} download="Paing_Resume">
+                  {isEnglish? "Download": "ダウンロード "}
+                </a>
               </Button>
             </Reveal>
           </HStack>

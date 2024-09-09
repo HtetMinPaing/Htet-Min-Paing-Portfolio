@@ -1,35 +1,49 @@
 import React from 'react'
-import { HStack, VStack, Text, Box, Heading, Flex, Grid, space, Button } from '@chakra-ui/react'
-import { faReact, faJava, faPython, faHtml5, faCss3, faBootstrap, faFigma, faGithub, faNodeJs } from '@fortawesome/free-brands-svg-icons'
+import {  VStack, Text, Box, Heading, Flex, Grid } from '@chakra-ui/react'
+import { faReact, faJava, faFigma, faGithub, faNodeJs, faPhp, faAndroid, faJs } from '@fortawesome/free-brands-svg-icons'
 import FullScreenSection from '../components/FullScreenSection'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useFontContext } from '../context/fontContext'
 import Reveal from '../animations/Reveal'
+import { useLanguageContext } from '../context/languageContext'
+import { faDatabase } from '@fortawesome/free-solid-svg-icons'
 
 const icons = [
     faReact,
     faJava,
-    faPython,
-    faHtml5,
-    faCss3,
-    faBootstrap,
+    faPhp,
+    faDatabase,
+    faAndroid,
+    faJs,
     faFigma,
     faGithub,
     faNodeJs
 ]
 
-const texts = [
-    ">> Ecommerence Site",
-    ">> Dynamic Webapp",
-    ">> Portal App",
-    ">> Business Website",
+const textENG = [
+    ">> Dynamic Website",
     ">> SPA Web Application",
-    ">> Personal Blog"
+    ">> Backend Database",
+    ">> Mobile Application",
+    ">> Wordpress website",
+    ">> Joomla Website",
+]
+
+const textsJP = [
+    ">> ダイナミックウェブサイト",
+    ">> SPAウェブアプリケーション",
+    ">> バックエンドデータベース",
+    ">> モバイルアプリケーション",
+    ">> WordPressウェブサイト",
+    ">> Joomlaウェブサイト"
 ]
 
 const ExperienceSection = () => {
 
     const {isLargeScreen, darkmode} = useFontContext();
+    const { isEnglish } = useLanguageContext();
+
+    const texts = isEnglish ? textENG : textsJP;
 
     return (
         <FullScreenSection
@@ -40,7 +54,9 @@ const ExperienceSection = () => {
             <Flex flexWrap="wrap" justifyContent="center" gap={`${isLargeScreen ? 200 : 10}`} color={darkmode ? "rgb(241, 245, 241)" : "#4d5061"}>
                 <Reveal cover={false} direction="right">
                     <Box className=''>
-                        <Heading as="h1" m="2rem" >Experience in </Heading>
+                        <Heading as="h1" m="2rem" >
+                            {isEnglish? "Experience in": "経験 が ある"}
+                        </Heading>
                         <Grid gridTemplateColumns={"1fr 1fr 1fr"} gridGap={8} m="2rem">
                             {
                                 icons.map((icon) => {
@@ -72,7 +88,11 @@ const ExperienceSection = () => {
                     marginLeft: "5rem"
                 }} /> */}
                 <Box className='' color={darkmode ? "rgb(241, 245, 241)" : "#4d5061"}>
-                    <Heading as="h1" m="2rem"><Reveal direction='left'>Build and Deploy</Reveal></Heading>
+                    <Heading as="h1" m="2rem">
+                        <Reveal direction='left'>
+                            {isEnglish? "Build and Deploy": "設計 と 開発"}
+                        </Reveal>
+                    </Heading>
                     <VStack m="2rem" alignItems="flex-start">
                         {
                             texts.map((text) => {

@@ -61,8 +61,8 @@ const LandingSection = () => {
   return (
     <FullScreenSection
       containerStyle={{ 
-        backgroundColor: darkmode ? "#1d1d16" : "#4d5061",
-        color: "white"
+        backgroundColor: darkmode ? "neutral.black.300" : "brand.100",
+        color: "neutral.white.100"
       }}
       py={16}
       spacing={8}

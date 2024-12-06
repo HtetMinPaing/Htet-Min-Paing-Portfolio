@@ -9,16 +9,13 @@ import Alert from "./components/Alert";
 import { FontProvider } from "./context/fontContext";
 import ExperienceSection from "./sections/ExperienceSection";
 import "./App.css"
-import { useEffect } from "react";
 import useAnimation from "./hooks/useAnimation";
-import useScroll from "./hooks/useScroll";
 import { LoaderProvider } from "./context/loaderContext";
 import Loader from "./components/Loader";
 import CertificateSection from "./sections/CertificateSection";
 import EducationTimeline from "./sections/EducationTimeline";
-import CertificateCard from "./components/CertificateCard";
 import { LanguageProvider } from "./context/languageContext";
-import Language from "./components/Language";
+import customTheme from "./theme";
 
 function App() {
 
@@ -29,8 +26,10 @@ function App() {
   // useAnimation(".leftBox","moveright")
   useAnimation(".moveDown", "movedown")
 
+  console.log(customTheme);
+  
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={customTheme}>
       <FontProvider>
         <AlertProvider>
           <LoaderProvider>

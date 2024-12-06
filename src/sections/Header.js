@@ -1,13 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Text, Link, Box, HStack, Menu, MenuButton, IconButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { Link, Box, HStack, Menu, MenuButton, IconButton, MenuList } from "@chakra-ui/react";
 import { useFontContext } from "../context/fontContext";
-import { color } from "framer-motion";
 import "@lottiefiles/lottie-player";
 import '@dotlottie/player-component';
 import { useLoaderContext } from "../context/loaderContext";
-import {socialsData} from  "../utils/data"
-import { faBars, faMoon, faSun, faAdjust } from "@fortawesome/free-solid-svg-icons";
+import { socialsData } from "../utils/data"
+import { faBars, faAdjust } from "@fortawesome/free-solid-svg-icons";
 import Language from "../components/Language";
 import { useLanguageContext } from "../context/languageContext";
 
@@ -16,7 +15,7 @@ const socials = socialsData
 
 const NormalMenu = () => {
 
-  const { isMobile, linkStyle } = useFontContext();
+  const { linkStyle } = useFontContext();
 
   return (
     <nav>
@@ -34,7 +33,7 @@ const NormalMenu = () => {
 
 const DropMenu = () => {
 
-  const { isMobile, linkStyle } = useFontContext();
+  const { linkStyle } = useFontContext();
 
   return (
     <nav>
@@ -44,14 +43,14 @@ const DropMenu = () => {
           aria-label="Options"
           icon={<FontAwesomeIcon icon={faBars} size="2x" />}
           variant="outline"
-          color="#fff"
+          color="neutral.white.100"
         />
         <MenuList>
           <Box display="flex" justifyContent="space-around">
             {socials.map((social, index) => {
               return (
                 <Link {...linkStyle} href={social.url} isExternal={true}>
-                  <FontAwesomeIcon icon={social.icon} size="2x" color="#4d5061" />
+                  <FontAwesomeIcon icon={social.icon} size="2x" color="brand.100" />
                 </Link>
               )
             })}
@@ -87,13 +86,13 @@ const Header = () => {
 
   const handleDarkMode = () => {
     toggleLoader(true);
-      setTimeout(() => {
-        toogleDarkmode();
-        toggleLoader(false);
-      }, 1500)
+    setTimeout(() => {
+      toogleDarkmode();
+      toggleLoader(false);
+    }, 1500)
   }
 
-  const { isMobile, linkStyle, toogleDarkmode, darkmode } = useFontContext();
+  const { isMobile, toogleDarkmode, darkmode } = useFontContext();
 
   return (
     <Box
@@ -106,28 +105,28 @@ const Header = () => {
       transitionProperty="transform"
       transitionDuration=".3s"
       transitionTimingFunction="ease-in-out"
-      backgroundColor="#4d5061"
+      backgroundColor="brand.100"
     >
-      <Box color="white" maxWidth="1280px" margin="0 auto">
+      <Box color="neutral.white.100" maxWidth="1280px" margin="0 auto">
         <HStack
-          px={isMobile?3:10}
+          px={isMobile ? 3 : 10}
           py={5}
           justifyContent="space-between"
           alignItems="center"
         >
           {isMobile ? <DropMenu /> : <NormalMenu />}
           <nav>
-            <HStack spacing={isMobile?3:6}>
-              {!isMobile && 
-                <Link fontSize="1.5rem" fontWeight={700} {...linkStyle} onClick={handleClick("projects")}>
-                  {isEnglish? "Projects": "プロジェクト"}
+            <HStack spacing={isMobile ? 3 : 6}>
+              {!isMobile &&
+                <Link fontSize="1.5rem" fontWeight={700} onClick={handleClick("projects")}>
+                  {isEnglish ? "Projects" : "プロジェクト"}
                 </Link>}
-              {!isMobile && 
-                <Link fontSize="1.5rem" fontWeight={700} {...linkStyle} onClick={handleClick("contact")}>
-                  {isEnglish? "Contact": "メール連絡"}
+              {!isMobile &&
+                <Link variant="underline" fontSize="1.5rem" fontWeight={700} onClick={handleClick("contact")}>
+                  {isEnglish ? "Contact" : "メール連絡"}
                 </Link>}
               <Language />
-              <FontAwesomeIcon icon={faAdjust} size="2xl" lightingColor={darkmode ? "#cc7d2f":"#16161d"} onClick={handleDarkMode} cursor="pointer" color={darkmode ? "#FDB813" : "#C2C5CC"} />
+              <FontAwesomeIcon icon={faAdjust} size="2xl" lightingColor={darkmode ? "neutral.orange" : "neutral.black.200"} onClick={handleDarkMode} cursor="pointer" color={darkmode ? "#FDB813" : "#C2C5CC"} />
             </HStack>
           </nav>
         </HStack>

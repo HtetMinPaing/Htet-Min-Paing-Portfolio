@@ -2,7 +2,7 @@ import React from 'react'
 import FullScreenSection from '../components/FullScreenSection'
 import { useFontContext } from '../context/fontContext';
 import { faReact, faJava, faFigma, faGithub, faNodeJs, faPhp, faAndroid, faJs } from '@fortawesome/free-brands-svg-icons'
-import { Box, Flex, Tooltip } from '@chakra-ui/react';
+import { Box, Flex, Tooltip, useTheme } from '@chakra-ui/react';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
@@ -19,27 +19,29 @@ const icons = [
     faNodeJs
 ]
 
-const textENG = [
-    ">> Dynamic Website",
-    ">> SPA Web Application",
-    ">> Backend Database",
-    ">> Mobile Application",
-    ">> Wordpress website",
-    ">> Joomla Website",
-]
+// const textENG = [
+//     ">> Dynamic Website",
+//     ">> SPA Web Application",
+//     ">> Backend Database",
+//     ">> Mobile Application",
+//     ">> Wordpress website",
+//     ">> Joomla Website",
+// ]
 
-const textsJP = [
-    ">> ダイナミックウェブサイト",
-    ">> SPAウェブアプリケーション",
-    ">> バックエンドデータベース",
-    ">> モバイルアプリケーション",
-    ">> WordPressウェブサイト",
-    ">> Joomlaウェブサイト"
-]
+// const textsJP = [
+//     ">> ダイナミックウェブサイト",
+//     ">> SPAウェブアプリケーション",
+//     ">> バックエンドデータベース",
+//     ">> モバイルアプリケーション",
+//     ">> WordPressウェブサイト",
+//     ">> Joomlaウェブサイト"
+// ]
 
 const ExperienceSection = () => {
 
-    const { isLargeScreen, darkmode } = useFontContext();
+    const theme = useTheme();
+
+    const { darkmode } = useFontContext();
 
     const MotionBox = motion(Box);
 
@@ -47,7 +49,7 @@ const ExperienceSection = () => {
         <FullScreenSection
             minHeight="auto"
             padding="1rem"
-            backgroundColor={darkmode ? "#1d1d16" : "rgb(241, 245, 241)"}
+            backgroundColor={darkmode ? "neutral.black.300" : "neutral.white.200"}
         >
             <Flex
                 wrap="wrap"
@@ -59,7 +61,7 @@ const ExperienceSection = () => {
                     icons.map((icon) => {
                         return (
                             <MotionBox
-                                backgroundColor={"#4d5061"}
+                                backgroundColor="brand.100"
                                 width="6rem"
                                 height="6rem"
                                 display="flex"
@@ -82,7 +84,7 @@ const ExperienceSection = () => {
                                     <FontAwesomeIcon
                                         icon={icon}
                                         size='4x'
-                                        color={"rgb(241, 245, 241)"}
+                                        color={theme.colors.neutral.white[200]}
                                         cursor="pointer"
                                     />
                                 </Tooltip>

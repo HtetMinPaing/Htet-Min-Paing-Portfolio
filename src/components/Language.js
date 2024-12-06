@@ -10,8 +10,8 @@ const Language = () => {
   const { isEnglish, toggleLanguage } = useLanguageContext();
   const { toggleLoader } = useLoaderContext();
 
-  const backgroundColor = isEnglish ? "#C2C5CC" : "#48bf84";
-  const iconColor = isEnglish ? "#48bf84" : "#C2C5CC";
+  const backgroundColor = isEnglish ? "#C2C5CC" : "highlight.300";
+  const iconColor = isEnglish ? "highlight.300" : "#C2C5CC";
 
   const handleLanguageToggle = () => {
     toggleLoader(true);

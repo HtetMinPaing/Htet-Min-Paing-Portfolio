@@ -1,4 +1,4 @@
-import { Heading, Image } from '@chakra-ui/react'
+import { Heading, Image, useTheme } from '@chakra-ui/react'
 import React from 'react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 
@@ -12,6 +12,22 @@ import { useLanguageContext } from '../context/languageContext'
 
 const EducationTimeline = () => {
 
+    const theme = useTheme();
+
+    const styles = {
+        iconStyle: { 
+            background: theme.colors.neutral.white[100] 
+        },
+        contentStyle: {
+            backgroundColor: theme.colors.brand[100],
+            color: theme.colors.neutral.white[100],
+            borderRadius: "15px"
+        },
+        contentArrowStyle: {
+            borderRight: `7px solid ${theme.colors.brand[100]}`
+        }
+    }
+
     const { isEnglish } = useLanguageContext();
 
     const data = isEnglish? educationData: educationDataJP;
@@ -23,7 +39,7 @@ const EducationTimeline = () => {
                     {isEnglish? "Education Background": "学歴"}
                 </Reveal>
             </Heading>
-            <VerticalTimeline lineColor='#4d5061'>
+            <VerticalTimeline lineColor={theme.colors.brand[100]}>
                 {
                     data.map(element => {
                         return (
@@ -31,16 +47,8 @@ const EducationTimeline = () => {
                                 key={element.id}
                                 date={element.year}
                                 dateClassName="date"
-                                iconStyle={{ background: "white" }}
                                 icon={<Image src={element.imageSrc} borderRadius={"50%"} />}
-                                contentStyle={{
-                                    backgroundColor: "#4d5061",
-                                    color: "white",
-                                    borderRadius: "15px"
-                                }}
-                                contentArrowStyle={{
-                                    borderRight: '7px solid #4d5061'
-                                }}
+                                {...styles}
                             >
                                 <Reveal cover={false}>
                                     <Heading as="h3" size="lg" className="vertical-timeline-element-title">

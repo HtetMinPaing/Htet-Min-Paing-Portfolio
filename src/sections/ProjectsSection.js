@@ -1,6 +1,6 @@
 import React from "react";
 import FullScreenSection from "../components/FullScreenSection";
-import { Box, HStack, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Heading, VStack } from "@chakra-ui/react";
 import Card, { TutorialCard } from "../components/Card";
 import { useFontContext } from "../context/fontContext";
 import { projectData, tutorialData } from "../utils/data";
@@ -17,14 +17,14 @@ const ProjectsSection = () => {
   return (
     <FullScreenSection
 
-      backgroundColor={darkmode ? "#1d1d16" : "rgb(241, 245, 241)"}
+      backgroundColor={darkmode ? "neutral.black.300" : "neutral.white.200"}
       isDarkBackground
       p={6}
       alignItems="flex-start"
       spacing={8}
       id="projects-section"
       minHeight="auto"
-      color={darkmode ? "rgb(241, 245, 241)" : "#4d5061"}
+      color={darkmode ? "neutral.white.200" : "brand.100"}
     >
       <Heading as="h1" mx="auto">
         {isEnglish? "Completed Projects": "完了したプロジェクト"}

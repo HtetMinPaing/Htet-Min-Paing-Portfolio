@@ -9,7 +9,7 @@ const MotionHeading = motion(Heading)
 
 const CertificateCard = ({ certificate, index }) => {
 
-    const { linkStyle, fontSize, isMobile } = useFontContext();
+    const { fontSize, isMobile } = useFontContext();
     return (
         <MotionBox
             whileHover="hover"
@@ -27,7 +27,7 @@ const CertificateCard = ({ certificate, index }) => {
         >
             <HStack position="relative" zIndex={10} color="white" gap={2} py={1}>
                 {certificate.orgs.map((org) => (
-                    <Badge bg="#48bf84" color="#1d1d16" borderRadius="full" px={3} py={0.5} >
+                    <Badge bg="highlight.300" color="neutral.black.300" borderRadius="full" px={3} py={0.5} >
                         {org}
                     </Badge>
                 ))}
@@ -52,8 +52,8 @@ const CertificateCard = ({ certificate, index }) => {
                     <Reveal cover={false}>{certificate.description}</Reveal>
                 </Text>
             </Box>
-            <Link href={certificate.url} isExternal={true} {...linkStyle} backdropBlur={true} position="absolute" bottom={2} right={6} left={6} zIndex={1}>
-                <Button w="full" _hover={{ bg: "#439775" }} my={isMobile ? 0 : 2}>
+            <Link href={certificate.url} isExternal={true} backdropBlur={true} position="absolute" bottom={2} right={6} left={6} zIndex={1}>
+                <Button w="full" my={isMobile ? 0 : 2}>
                     Check Certificate
                 </Button>
             </Link>

@@ -12,7 +12,7 @@ const FullScreenSection = ({ children, containerStyle, ...boxProps }) => {
   return (
     <VStack
       color={darkmode ? "white" : "black"}
-      backgroundColor={darkmode ? "#1d1d16" : "rgb(241, 245, 241)"}
+      backgroundColor={darkmode ? "neutral.black.300" : "neutral.white.200"}
       {...containerStyle}
     >
       <VStack maxWidth="1280px" minHeight="95vh" {...boxProps}>

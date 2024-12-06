@@ -10,17 +10,17 @@ import { useLanguageContext } from '../context/languageContext'
 
 const CertificateSection = () => {
 
-  const { darkmode, linkStyle } = useFontContext();
+  const { darkmode } = useFontContext();
   const { isEnglish } = useLanguageContext();
   
   const certificates = isEnglish ? certificateData : certificateDataJP;
 
   return (
     <FullScreenSection
-      backgroundColor={darkmode ? "#1d1d16" : "rgb(241, 245, 241)"}
+      backgroundColor={darkmode ? "neutral.black.300" : "neutral.white.200"}
       p={3}
       minHeight="auto"
-      color={darkmode ? "rgb(241, 245, 241)" : "#4d5061"}
+      color={darkmode ? "neutral.white.200" : "brand.100"}
     >
       <Heading as="h1" mx="auto" my={2}>
         <Reveal cover={false} direction='bottom'>

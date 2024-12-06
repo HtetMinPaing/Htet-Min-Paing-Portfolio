@@ -1,16 +1,16 @@
 import React from "react";
-import {Box, Flex} from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { useFontContext } from "../context/fontContext";
 
 const Footer = () => {
-  const {darkmode} = useFontContext();
+  const { darkmode } = useFontContext();
   return (
-    <Box background={darkmode ? "#1b1b1b": "#18181b"}>
+    <Box background={darkmode ? "neutral.black.100" : "neutral.black.400"}>
       <footer>
         <Flex
           margin="0 auto"
           px={10}
-          color="white"
+          color="neutral.white.100"
           justifyContent="center"
           alignItems="center"
           maxWidth="1024px"

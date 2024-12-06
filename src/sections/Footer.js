@@ -1,9 +1,5 @@
 import React from "react";
-<<<<<<< HEAD
 import { Box, Flex } from "@chakra-ui/react";
-=======
-import {Box, Flex} from "@chakra-ui/react";
->>>>>>> 517d148e653e2af3adb2499eb416d97c7b5ad722
 import { useFontContext } from "../context/fontContext";
 
 const Footer = () => {

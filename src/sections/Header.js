@@ -5,13 +5,8 @@ import { useFontContext } from "../context/fontContext";
 import "@lottiefiles/lottie-player";
 import '@dotlottie/player-component';
 import { useLoaderContext } from "../context/loaderContext";
-<<<<<<< HEAD
 import { socialsData } from "../utils/data"
 import { faBars, faAdjust } from "@fortawesome/free-solid-svg-icons";
-=======
-import {socialsData} from  "../utils/data"
-import { faBars, faMoon, faSun, faAdjust } from "@fortawesome/free-solid-svg-icons";
->>>>>>> 517d148e653e2af3adb2499eb416d97c7b5ad722
 import Language from "../components/Language";
 import { useLanguageContext } from "../context/languageContext";
 
@@ -91,17 +86,10 @@ const Header = () => {
 
   const handleDarkMode = () => {
     toggleLoader(true);
-<<<<<<< HEAD
     setTimeout(() => {
       toogleDarkmode();
       toggleLoader(false);
     }, 1500)
-=======
-      setTimeout(() => {
-        toogleDarkmode();
-        toggleLoader(false);
-      }, 1500)
->>>>>>> 517d148e653e2af3adb2499eb416d97c7b5ad722
   }
 
   const { isMobile, toogleDarkmode, darkmode } = useFontContext();
@@ -128,7 +116,6 @@ const Header = () => {
         >
           {isMobile ? <DropMenu /> : <NormalMenu />}
           <nav>
-<<<<<<< HEAD
             <HStack spacing={isMobile ? 3 : 6}>
               {!isMobile &&
                 <Link fontSize="1.5rem" fontWeight={700} onClick={handleClick("projects")}>
@@ -140,19 +127,6 @@ const Header = () => {
                 </Link>}
               <Language />
               <FontAwesomeIcon icon={faAdjust} size="2xl" lightingColor={darkmode ? "neutral.orange" : "neutral.black.200"} onClick={handleDarkMode} cursor="pointer" color={darkmode ? "#FDB813" : "#C2C5CC"} />
-=======
-            <HStack spacing={isMobile?3:6}>
-              {!isMobile && 
-                <Link fontSize="1.5rem" fontWeight={700} {...linkStyle} onClick={handleClick("projects")}>
-                  {isEnglish? "Projects": "プロジェクト"}
-                </Link>}
-              {!isMobile && 
-                <Link fontSize="1.5rem" fontWeight={700} {...linkStyle} onClick={handleClick("contact")}>
-                  {isEnglish? "Contact": "メール連絡"}
-                </Link>}
-              <Language />
-              <FontAwesomeIcon icon={faAdjust} size="2xl" lightingColor={darkmode ? "#cc7d2f":"#16161d"} onClick={handleDarkMode} cursor="pointer" color={darkmode ? "#FDB813" : "#C2C5CC"} />
->>>>>>> 517d148e653e2af3adb2499eb416d97c7b5ad722
             </HStack>
           </nav>
         </HStack>

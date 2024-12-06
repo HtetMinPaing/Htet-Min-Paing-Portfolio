@@ -52,13 +52,8 @@ const CertificateCard = ({ certificate, index }) => {
                     <Reveal cover={false}>{certificate.description}</Reveal>
                 </Text>
             </Box>
-<<<<<<< HEAD
             <Link href={certificate.url} isExternal={true} backdropBlur={true} position="absolute" bottom={2} right={6} left={6} zIndex={1}>
                 <Button w="full" my={isMobile ? 0 : 2}>
-=======
-            <Link href={certificate.url} isExternal={true} {...linkStyle} backdropBlur={true} position="absolute" bottom={2} right={6} left={6} zIndex={1}>
-                <Button w="full" _hover={{ bg: "#439775" }} my={isMobile ? 0 : 2}>
->>>>>>> 517d148e653e2af3adb2499eb416d97c7b5ad722
                     Check Certificate
                 </Button>
             </Link>

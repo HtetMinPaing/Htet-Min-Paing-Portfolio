@@ -14,8 +14,14 @@ import { LoaderProvider } from "./context/loaderContext";
 import Loader from "./components/Loader";
 import CertificateSection from "./sections/CertificateSection";
 import EducationTimeline from "./sections/EducationTimeline";
+<<<<<<< HEAD
 import { LanguageProvider } from "./context/languageContext";
 import customTheme from "./theme";
+=======
+import CertificateCard from "./components/CertificateCard";
+import { LanguageProvider } from "./context/languageContext";
+import Language from "./components/Language";
+>>>>>>> 517d148e653e2af3adb2499eb416d97c7b5ad722
 
 function App() {
 

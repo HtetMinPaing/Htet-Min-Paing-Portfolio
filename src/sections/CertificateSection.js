@@ -10,7 +10,11 @@ import { useLanguageContext } from '../context/languageContext'
 
 const CertificateSection = () => {
 
+<<<<<<< HEAD
   const { darkmode } = useFontContext();
+=======
+  const { darkmode, linkStyle } = useFontContext();
+>>>>>>> 517d148e653e2af3adb2499eb416d97c7b5ad722
   const { isEnglish } = useLanguageContext();
   
   const certificates = isEnglish ? certificateData : certificateDataJP;

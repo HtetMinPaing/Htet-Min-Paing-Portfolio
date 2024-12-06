@@ -12,6 +12,7 @@ import { useLanguageContext } from '../context/languageContext'
 
 const EducationTimeline = () => {
 
+<<<<<<< HEAD
     const theme = useTheme();
 
     const styles = {
@@ -28,6 +29,8 @@ const EducationTimeline = () => {
         }
     }
 
+=======
+>>>>>>> 517d148e653e2af3adb2499eb416d97c7b5ad722
     const { isEnglish } = useLanguageContext();
 
     const data = isEnglish? educationData: educationDataJP;

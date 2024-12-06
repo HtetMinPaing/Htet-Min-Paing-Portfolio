@@ -18,8 +18,13 @@ const LandingSection = () => {
   const { isEnglish } = useLanguageContext();
 
   const greeting = isEnglish ? aboutme.greeting : aboutmeJP.greeting;
+<<<<<<< HEAD
   const bio1 = isEnglish ? aboutme.bio1 : aboutmeJP.bio1;
   const bio2 = isEnglish ? aboutme.bio2 : aboutmeJP.bio2;
+=======
+  const bio1 = isEnglish ? aboutme.bio1: aboutmeJP.bio1;
+  const bio2 = isEnglish ? aboutme.bio2: aboutmeJP.bio2;
+>>>>>>> 517d148e653e2af3adb2499eb416d97c7b5ad722
   return (
     <FullScreenSection
       justifyContent="center"
@@ -28,7 +33,11 @@ const LandingSection = () => {
     // backgroundColor={darkmode ? "#1d1d16" : "rgb(241, 245, 241)"}
     >
       <Flex pt="6rem" gap={isMobile ? "2.5rem" : "5rem"} flexWrap="wrap" justifyContent="center" alignItems="center" flexDirection={isLargeScreen ? "" : "column-reverse"}>
+<<<<<<< HEAD
         <VStack alignItems="flex-start" p={4} color={darkmode ? "neutral.white.200" : "brand.100"}>
+=======
+        <VStack alignItems="flex-start" p={4} color={darkmode ? "rgb(241, 245, 241)" : "#4d5061"}>
+>>>>>>> 517d148e653e2af3adb2499eb416d97c7b5ad722
           <Heading>
             <Reveal direction="bottom">{greeting}</Reveal>
           </Heading>
@@ -42,14 +51,22 @@ const LandingSection = () => {
             <Reveal cover={false}>
               <Button fontSize="1.2rem" {...bottomStyle}>
                 <a href={resume} target="_blank">
+<<<<<<< HEAD
                   {isEnglish ? "Resume" : "履歴書"}
+=======
+                  {isEnglish? "Resume": "履歴書"}
+>>>>>>> 517d148e653e2af3adb2499eb416d97c7b5ad722
                 </a>
               </Button>
             </Reveal>
             <Reveal cover={false}>
               <Button fontSize="1.2rem" {...bottomStyle}>
                 <a href={resume} download="Paing_Resume">
+<<<<<<< HEAD
                   {isEnglish ? "Download" : "ダウンロード "}
+=======
+                  {isEnglish? "Download": "ダウンロード "}
+>>>>>>> 517d148e653e2af3adb2499eb416d97c7b5ad722
                 </a>
               </Button>
             </Reveal>

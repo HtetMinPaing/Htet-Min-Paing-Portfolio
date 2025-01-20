@@ -93,7 +93,7 @@ const Reveal = ({ children, direction = "top", cover = true, reverseCover = fals
           bottom: 0,
           left: 0,
           right: 0,
-          background: "highlight.300",
+          background: "#48bf84",
           zIndex: 20,
         }} 
       />}

@@ -9,6 +9,7 @@ import { socialsData } from "../utils/data"
 import { faBars, faAdjust } from "@fortawesome/free-solid-svg-icons";
 import Language from "../components/Language";
 import { useLanguageContext } from "../context/languageContext";
+import SideDrawerMenu from "../components/SideDrawerMenu";
 
 
 const socials = socialsData
@@ -43,14 +44,14 @@ const DropMenu = () => {
           aria-label="Options"
           icon={<FontAwesomeIcon icon={faBars} size="2x" />}
           variant="outline"
-          color="neutral.white.100"
+          color="#ffffff"
         />
         <MenuList>
           <Box display="flex" justifyContent="space-around">
             {socials.map((social, index) => {
               return (
                 <Link {...linkStyle} href={social.url} isExternal={true}>
-                  <FontAwesomeIcon icon={social.icon} size="2x" color="brand.100" />
+                  <FontAwesomeIcon icon={social.icon} size="2x" color="#4d5061" />
                 </Link>
               )
             })}
@@ -114,7 +115,7 @@ const Header = () => {
           justifyContent="space-between"
           alignItems="center"
         >
-          {isMobile ? <DropMenu /> : <NormalMenu />}
+          {isMobile ? <SideDrawerMenu /> : <NormalMenu />}
           <nav>
             <HStack spacing={isMobile ? 3 : 6}>
               {!isMobile &&

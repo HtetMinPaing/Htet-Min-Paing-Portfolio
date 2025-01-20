@@ -19,7 +19,7 @@ const ProjectsSection = () => {
 
       backgroundColor={darkmode ? "neutral.black.300" : "neutral.white.200"}
       isDarkBackground
-      p={6}
+      p={3}
       alignItems="flex-start"
       spacing={8}
       id="projects-section"

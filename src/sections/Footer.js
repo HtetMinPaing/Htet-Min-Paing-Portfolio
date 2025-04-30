@@ -17,7 +17,7 @@ const Footer = () => {
           height={16}
           gap={4}
         >
-          <p>Paing • © 2023 - 2024</p>
+          <p>Paing • © 2023 - {new Date().getFullYear()}</p>
           <p>All right preserved to the owners</p>
         </Flex>
       </footer>

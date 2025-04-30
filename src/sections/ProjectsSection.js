@@ -50,11 +50,11 @@ const ProjectsSection = () => {
             repo={project.repo}
           />
         ))}
-        <VStack justifyContent={"space-between"}>
+        {/* <VStack justifyContent={"space-between"}>
           {tutorials.map((tutorial) => (
             <TutorialCard tutorial={tutorial} />
           ))}
-        </VStack>
+        </VStack> */}
       </Box>
     </FullScreenSection>
   );

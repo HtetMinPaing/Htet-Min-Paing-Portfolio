@@ -18,6 +18,8 @@ const customTheme = extendTheme({
             white: {
                 100: "#ffffff",
                 200: "#f1f5f1",
+                300: "#c4c4c4",
+                400: "#929292"
             },
             black: {
                 100: "#1b1b1b",
@@ -31,12 +33,12 @@ const customTheme = extendTheme({
         Button: {
             baseStyle: {
                 background: "highlight.300",
-                color: 'neutral.black.300',
+                color: 'neutral.black.200',
                 fontSize: '1.3rem',
                 fontWeight: '700',
                 _hover: {
                     background: "highlight.100", // Set hover background
-                    color: "neutral.white.200",  // Set hover text color
+                    color: "neutral.black.200",  // Set hover text color
                     transition: '0.5s',
                 },
             },

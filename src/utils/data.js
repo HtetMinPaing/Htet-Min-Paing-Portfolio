@@ -10,7 +10,7 @@ export const aboutme = {
 export const socialsData = [
   {
     icon: faEnvelope,
-    url: "mailto: ttee62525@gmail.com",
+    url: "mailto: htetminpaing.dev@gmail.com",
   },
   {
     icon: faGithub,
@@ -83,14 +83,23 @@ export const projectData = [
     url: "https://tt-estate.onrender.com/",
     repo: "https://github.com/HtetMinPaing/Real-Estate-MERN.git"
   },
+  // {
+  //   title: "Fast Food Web",
+  //   description:
+  //     "An website for online fast food ording system. Using the web technology including HTML5, CSS3, and Javascript",
+  //   getImageSrc: () => require("../images/project1.png"),
+  //   languages: ["HTML5", "CSS3", "JavaScript", "Responsive", "FontAwesome"],
+  //   url: "https://tt-dessertshop.pages.dev/",
+  //   repo: "https://github.com/HtetMinPaing/Project-1.1.git"
+  // },
   {
-    title: "Fast Food Web",
+    title: "NextJS OneDrive Clone ",
     description:
-      "An website for online fast food ording system. Using the web technology including HTML5, CSS3, and Javascript",
-    getImageSrc: () => require("../images/project1.png"),
-    languages: ["HTML5", "CSS3", "JavaScript", "Responsive", "FontAwesome"],
-    url: "https://tt-dessertshop.pages.dev/",
-    repo: "https://github.com/HtetMinPaing/Project-1.1.git"
+      "A full stack NextJS file storage system with user authentication and file uploading, sharing, and storage solution.",
+    getImageSrc: () => require("../images/project8.png"),
+    languages: ["NextJS", "ReactJS", "TailwindCss"],
+    url: "https://github.com/HtetMinPaing/tee_drive.git",
+    repo: "https://github.com/HtetMinPaing/tee_drive.git"
   },
   {
     title: "Restaurant Web",
@@ -111,13 +120,22 @@ export const projectData = [
     repo: "https://github.com/HtetMinPaing/React-ToDoApp.git"
   },
   {
-    title: "Java Quiz",
+    title: "File Storage",
     description:
-      "A Java GUI Project for a quiz application by using java built-in package javax [Contact me for source code]",
-    getImageSrc: () => require("../images/project3.png"),
-    languages: ["Java", "Javax", "Object-Orient-Programming", "GUI"],
-    url: "mailto: hmphtetminpaing@gmail.com",
-    repo: "https://github.com/HtetMinPaing/Java-Project.git"
+      "A backend file storage management implementing spring security, jwt authentication, file sharing and other features.",
+    getImageSrc: () => require("../images/project7.jpg"),
+    languages: ["Java", "SpringBoot", "PostgresSQL", "JPA"],
+    url: "https://github.com/HtetMinPaing/teedrive_backend.git",
+    repo: "https://github.com/HtetMinPaing/teedrive_backend.git"
+  },
+  {
+    title: "Menu Provider",
+    description:
+      "A simple backend service providing restaurant menu using the Java Spring Framework and Postgres database.",
+    getImageSrc: () => require("../images/project6.jpg"),
+    languages: ["Java", "SpringBoot", "PostgresSQL", "JPA"],
+    url: "https://github.com/HtetMinPaing/restaurantdb.git",
+    repo: "https://github.com/HtetMinPaing/restaurantdb.git"
   },
 ];
 

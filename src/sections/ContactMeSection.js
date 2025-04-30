@@ -118,9 +118,10 @@ const LandingSection = () => {
                   <FormControl>
                     <FormLabel htmlFor="type">Type of enquiry</FormLabel>
                     <Select id="type" name="type" {...formik.getFieldProps("type")}>
-                      <option style={optionStyle} value="hireMe">Freelance project proposal</option>
-                      <option style={optionStyle} value="employMe">Hire as employee</option>
-                      <option style={optionStyle} value="openSource">
+                      <option style={optionStyle} value="Freelance project proposal">Freelance project proposal</option>
+                      <option style={optionStyle} value="Hire as employee">Hire as employee</option>
+                      <option style={optionStyle} value="Software deployment">Software deployment</option>
+                      <option style={optionStyle} value="Open source consultancy session">
                         Open source consultancy session
                       </option>
                       <option style={optionStyle} value="other">Other</option>
